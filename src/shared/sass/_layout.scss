@@ -1,0 +1,17 @@
+@use './vars' as v;
+
+
+body {
+  font-size: v.$fs16;
+  font-weight: v.$fw400;
+  line-height: v.$lh25;
+  font-weight: v.$fw400;
+  font-family: v.$ffTikTok;
+}
+
+.container {
+  max-width: v.$container_base;
+  padding: v.$container_pd_base;
+  margin: 0 auto;
+}
+
