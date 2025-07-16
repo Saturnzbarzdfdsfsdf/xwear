@@ -1,9 +1,15 @@
 @use '../../../shared/sass/vars' as v;
 
-
 .header {
   background-color: v.$bg_dark;
-  padding:v.$header_pd
+  padding: v.$header_pd;
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: v.$g32;
+  }
 }
 
 .inner {
@@ -11,42 +17,3 @@
   justify-content: space-between;
 }
 
-.list {
-  display: flex;
-  gap: v.$g48;
-
-  a {
-    color: v.$text_white;
-    transition: v.$color_transition;
-    position: relative;
-
-    &:hover {
-      color: v.$accent_color;
-    }
-
-    
-
-  }
-}
-
-// Стиль для активной ссылки
-.active {
-  color: v.$accent_color !important;
-  
-  // Подчеркивание для активной ссылки (опционально)
-  // &::after {
-  //   content: '';
-  //   position: absolute;
-  //   bottom: -8px;
-  //   left: 0;
-  //   right: 0;
-  //   height: 2px;
-  //   background-color: v.$accent_color;
-  // }
-
-      &::after {
-    opacity: 1;                // Делает подчеркивание видимым
-    transform: scaleX(1);      // "Разворачивает" подчеркивание по ширине
-  }
-
-}

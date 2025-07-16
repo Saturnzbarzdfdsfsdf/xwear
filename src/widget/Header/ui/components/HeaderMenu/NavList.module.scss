@@ -1,0 +1,33 @@
+@use '../../../../../shared/sass/vars' as v;
+
+.list {
+  display: flex;
+  gap: v.$g48;
+  position: relative;
+
+  a {
+    color: v.$text_white;
+    transition: v.$color_transition;
+    position: relative;
+
+    &:hover {
+      color: v.$accent_color;
+    }
+  }
+}
+
+// Элемент анимированного подчеркивания
+.dash {
+  position: absolute;
+  bottom: -6px;
+  height: 3px;
+  border-radius: 8px;
+  background-color: v.$accent_color;
+  transition: transform v.$transition_duration, width v.$transition_duration;
+  will-change: transform, width;
+}
+
+// Активная ссылка (только цвет)
+.active {
+  color: v.$accent_color !important;
+}

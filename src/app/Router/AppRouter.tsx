@@ -5,7 +5,6 @@ import { HomePage } from '../../pages/HomePage';
 import { InfoPage } from '../../pages/InformationPage';
 
 
-
 const AppRouter = createBrowserRouter([
   {
     element: <Layout />, // Общий лейаут

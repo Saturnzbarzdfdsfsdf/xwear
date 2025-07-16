@@ -2,11 +2,17 @@ import React from 'react'
 
 import {Link} from 'react-router-dom'
 
-import NavList from './components/NavList'
+import NavList from './components/HeaderMenu/NavList'
+
 import { Logo } from '../../../shared/ui'
+import { Search } from '../../../feature/search'
+import { Profile } from '../../../entity/profile'
+import { Favorites } from '../../../entity/favorites'
+import { Cart } from '../../../entity/cart'
 
 
 import logoSvg from '../../../shared/assets/icon/Logo.svg'
+
 import '../../../shared/sass/main.scss'
 import style from './Header.module.scss'
 
@@ -18,6 +24,7 @@ const Header = () => {
 
       <div className={style.inner}>
 
+
         <Link>
           <Logo props={logoSvg} />
         </Link>
@@ -25,6 +32,13 @@ const Header = () => {
         <nav>
           <NavList /> 
         </nav>
+
+        <div className={style.header__actions}>
+        <Search/>
+        <Profile/>
+        <Favorites/>
+        <Cart/>
+        </div>
 
         <div>social</div>
 
