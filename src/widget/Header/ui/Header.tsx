@@ -9,24 +9,28 @@ import { Search } from '../../../feature/search'
 import { Profile } from '../../../entity/profile'
 import { Favorites } from '../../../entity/favorites'
 import { Cart } from '../../../entity/cart'
+import { Burger } from '../../Burger'
 
 
 import logoSvg from '../../../shared/assets/icon/Logo.svg'
 
 import '../../../shared/sass/main.scss'
 import style from './Header.module.scss'
+import useMediaQuery from '../../../shared/libs/hook/useMediaQuery'
 
 const Header = () => {
+  
+  const isDesktop = useMediaQuery('(max-width: 1024px)');
 
   return (
     <header className={style.header}>
       <div className='container'>
 
-      <div className={style.inner}>
+      <div className={style.header__inner}>
 
 
         <Link>
-          <Logo props={logoSvg} />
+          <Logo className={style.logo} content={logoSvg} />
         </Link>
 
         <nav>
@@ -40,7 +44,7 @@ const Header = () => {
         <Cart/>
         </div>
 
-        <div>social</div>
+            {isDesktop && <Burger />}
 
         </div>
       </div>

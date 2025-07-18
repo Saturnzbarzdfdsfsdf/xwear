@@ -1,19 +1,65 @@
 @use '../../../shared/sass/vars' as v;
 
 .header {
+  position: relative;
   background-color: v.$bg_dark;
   padding: v.$header_pd;
+
+  @media (max-width: 1024px) {
+    padding: v.$header_pd1024;
+  }
+  @media (max-width: 768px) {
+    padding: v.$header_pd768;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    @media (max-width: 1024px) {
+      flex-direction: row-reverse;
+    }
+  }
 
   &__actions {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: v.$g32;
+    padding: 8px;
+    gap: clamp(12px, 4vw, v.$g32);
+
+    // Для планшетов и мобильных
+    @media (max-width: 1024px) {
+      flex-grow: 1; // Занимает всё доступное пространство
+      justify-content: flex-end; // Элементы по правому краю
+    }
+
+    // Только для мобильных (до 425px)
+    @media (max-width: 425px) {
+      justify-content: space-between; // Распределение пространства
+      width: 100%; // Занимает всю ширину
+
+      // Прижимаем поиск к левому краю
+      & > :first-child {
+        margin-right: auto;
+        margin-left: 16px;
+      }
+    }
   }
 }
 
-.inner {
-  display: flex;
-  justify-content: space-between;
+// Стили для логотипа
+.logo {
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: auto;
+    max-width: 72px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @media (max-width: 425px) {
+    max-width: 56px;
+  }
 }
-

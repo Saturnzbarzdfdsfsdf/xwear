@@ -2,8 +2,14 @@
 
 .list {
   display: flex;
-  gap: v.$g48;
+  // gap: v.$g48;
+  gap: clamp(8px, 3vw, v.$g48);
   position: relative;
+
+  @media (max-width: 1024px) {
+      display: none;
+  }
+
 
   a {
     color: v.$text_white;
