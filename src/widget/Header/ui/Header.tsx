@@ -20,7 +20,7 @@ import useMediaQuery from '../../../shared/libs/hook/useMediaQuery'
 
 const Header = () => {
   
-  const isDesktop = useMediaQuery('(max-width: 1024px)');
+  const isMobile = useMediaQuery('(max-width: 1024px)');
 
   return (
     <header className={style.header}>
@@ -29,7 +29,7 @@ const Header = () => {
       <div className={style.header__inner}>
 
 
-        <Link>
+        <Link to={''}>
           <Logo className={style.logo} content={logoSvg} />
         </Link>
 
@@ -44,7 +44,7 @@ const Header = () => {
         <Cart/>
         </div>
 
-            {isDesktop && <Burger />}
+            {isMobile && <Burger />}
 
         </div>
       </div>
